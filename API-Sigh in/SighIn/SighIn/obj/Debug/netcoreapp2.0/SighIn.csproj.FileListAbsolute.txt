@@ -1,0 +1,11 @@
+D:\code collection\API-Sigh in\SighIn\SighIn\bin\Debug\netcoreapp2.0\SighIn.deps.json
+D:\code collection\API-Sigh in\SighIn\SighIn\bin\Debug\netcoreapp2.0\SighIn.runtimeconfig.json
+D:\code collection\API-Sigh in\SighIn\SighIn\bin\Debug\netcoreapp2.0\SighIn.runtimeconfig.dev.json
+D:\code collection\API-Sigh in\SighIn\SighIn\bin\Debug\netcoreapp2.0\SighIn.dll
+D:\code collection\API-Sigh in\SighIn\SighIn\bin\Debug\netcoreapp2.0\SighIn.pdb
+D:\code collection\API-Sigh in\SighIn\SighIn\obj\Debug\netcoreapp2.0\SighIn.csprojResolveAssemblyReference.cache
+D:\code collection\API-Sigh in\SighIn\SighIn\obj\Debug\netcoreapp2.0\SighIn.csproj.CoreCompileInputs.cache
+D:\code collection\API-Sigh in\SighIn\SighIn\obj\Debug\netcoreapp2.0\SighIn.AssemblyInfoInputs.cache
+D:\code collection\API-Sigh in\SighIn\SighIn\obj\Debug\netcoreapp2.0\SighIn.AssemblyInfo.cs
+D:\code collection\API-Sigh in\SighIn\SighIn\obj\Debug\netcoreapp2.0\SighIn.dll
+D:\code collection\API-Sigh in\SighIn\SighIn\obj\Debug\netcoreapp2.0\SighIn.pdb
