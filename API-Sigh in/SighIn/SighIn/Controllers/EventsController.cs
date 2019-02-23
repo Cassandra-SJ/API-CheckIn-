@@ -39,8 +39,9 @@ namespace SighIn.Controllers
         [HttpPut("{id}")]
         public void Put(Events value)
         {
-          
-           this. repo.Update(value);//局部变量前要加this.但是不加效果也一样
+            value.CreatedTime = DateTime.UtcNow;
+            repo.AddAsync(value);
+          // this. repo.Update(value);//局部变量前要加this.但是不加效果也一样
             
         }
         
