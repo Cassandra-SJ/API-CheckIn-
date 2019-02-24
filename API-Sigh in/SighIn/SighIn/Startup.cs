@@ -4,12 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
-namespace SighIn
+namespace EventsBerry
 {
     public class Startup
     {
@@ -21,21 +22,17 @@ namespace SighIn
         public IConfiguration Configuration { get; }
      
 
-
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //swagger插件激活过程
-
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-            services.AddSwaggerGen(Swagger =>
+
+            services.AddSwaggerGen(swagger =>
             {
-                Swagger.DescribeAllEnumsAsStrings();
-                Swagger.DescribeAllParametersInCamelCase();
-                Swagger.SwaggerDoc("v1",new Swashbuckle.AspNetCore.Swagger.Info { Title = "SighIn" } );
-                
-            }
-                );
+                swagger.DescribeAllEnumsAsStrings();
+                swagger.DescribeAllParametersInCamelCase();
+                swagger.SwaggerDoc("v1", new Swashbuckle.AspNetCore.Swagger.Info { Title = "SighIn" });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,15 +41,23 @@ namespace SighIn
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-               
             }
+
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/Swagger/v1/Swagger.Json","SighIn");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "SighIn");
             });
 
-            app.UseMvc();
+            // How to add default home page
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Home}/{action=Index}");
+            });
+
+            app.UseDefaultFiles();
         }
     }
 }
